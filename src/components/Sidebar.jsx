@@ -1,11 +1,15 @@
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import TASKS from "../data/tasks";
 import { useMarkerStore } from "../store/useMarkerStore.jsx";
+import LanguageSwitcher from "./LanguageSwitcher";
 import "./Sidebar.css";
 
 export default function Sidebar() {
   const { currentTaskId, markers, setCurrentTask, exportData, importData } =
     useMarkerStore();
+  const { t } = useTranslation("ui");
+  const { t: tTasks } = useTranslation("tasks");
   const fileRef = useRef(null);
 
   const handleImport = (e) => {
@@ -17,7 +21,7 @@ export default function Sidebar() {
         const data = JSON.parse(ev.target.result);
         importData(data);
       } catch {
-        alert("无效的 JSON 文件");
+        alert(t("invalidJson"));
       }
     };
     reader.readAsText(file);
@@ -27,10 +31,13 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h2>GeoLocus 标注工具</h2>
+        <div className="sidebar-title-row">
+          <h2>{t("appTitle")}</h2>
+          <LanguageSwitcher />
+        </div>
         <div className="sidebar-actions">
-          <button onClick={exportData}>导出 JSON</button>
-          <button onClick={() => fileRef.current?.click()}>导入 JSON</button>
+          <button onClick={exportData}>{t("exportJson")}</button>
+          <button onClick={() => fileRef.current?.click()}>{t("importJson")}</button>
           <input
             ref={fileRef}
             type="file"
@@ -45,6 +52,7 @@ export default function Sidebar() {
           const taskMarkers = markers[task.id] || { point: [], line: [], polygon: [] };
           const count =
             taskMarkers.point.length + taskMarkers.line.length + taskMarkers.polygon.length;
+          const desc = tTasks(task.id, { defaultValue: task.description });
           return (
             <div
               key={task.id}
@@ -53,9 +61,7 @@ export default function Sidebar() {
             >
               <span className="task-id">{task.id}</span>
               <span className="task-desc">
-                {task.description.length > 30
-                  ? task.description.slice(0, 30) + "…"
-                  : task.description}
+                {desc.length > 30 ? desc.slice(0, 30) + "…" : desc}
               </span>
               <span className={`task-badge ${count === 0 ? "empty" : ""}`}>
                 {count}

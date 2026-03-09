@@ -1,5 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import Map, { Marker, Popup, Source, Layer } from "react-map-gl/mapbox";
+import { useTranslation } from "react-i18next";
 import "mapbox-gl/dist/mapbox-gl.css";
 import TASKS from "../data/tasks";
 import REFERENCE_BY_TASK_ID, { EMPTY_REFERENCE } from "../data/reference";
@@ -67,7 +68,9 @@ const REFERENCE_LABEL_LAYER = {
 export default function MapView() {
   const { currentTaskId, markers, drawMode, addPoint, addShape, removeItem } =
     useMarkerStore();
-  const task = TASKS.find((t) => t.id === currentTaskId);
+  const { t, i18n } = useTranslation("ui");
+  const { t: tGeo } = useTranslation("geoNames");
+  const task = TASKS.find((tk) => tk.id === currentTaskId);
   const mapRef = useRef(null);
   const [popupInfo, setPopupInfo] = useState(null);
   const [draftState, setDraftState] = useState({ taskId: null, coordinates: [] });
@@ -132,6 +135,20 @@ export default function MapView() {
   const taskMarkers = markers[currentTaskId] || { point: [], line: [], polygon: [] };
   const referenceData = REFERENCE_BY_TASK_ID[currentTaskId] || EMPTY_REFERENCE;
 
+  const translatedLabelCollection = useMemo(() => {
+    const { features, ...rest } = referenceData.labelCollection;
+    return {
+      ...rest,
+      features: features.map((f) => ({
+        ...f,
+        properties: {
+          ...f.properties,
+          name: tGeo(f.properties.name, { defaultValue: f.properties.name }),
+        },
+      })),
+    };
+  }, [referenceData.labelCollection, tGeo, i18n.language]);
+
   const lineFeatures = taskMarkers.line.map((item, index) => ({
     type: "Feature",
     properties: { index, shapeType: "line", timestamp: item.timestamp },
@@ -185,7 +202,7 @@ export default function MapView() {
   const handleCompleteDraft = () => {
     const minPoints = drawMode === "line" ? 2 : 3;
     if (draftCoords.length < minPoints) {
-      alert(drawMode === "line" ? "线标注至少需要 2 个点" : "面标注至少需要 3 个点");
+      alert(drawMode === "line" ? t("lineMinPoints") : t("polygonMinPoints"));
       return;
     }
     addShape(currentTaskId, drawMode, draftCoords);
@@ -197,11 +214,14 @@ export default function MapView() {
       {(drawMode === "line" || drawMode === "polygon") && (
         <div className="draw-toolbar">
           <span>
-            当前{drawMode === "line" ? "线" : "面"}草稿点数：{draftCoords.length}
+            {t("draftPoints", {
+              mode: drawMode === "line" ? t("drawMode.line") : t("drawMode.polygon"),
+              count: draftCoords.length,
+            })}
           </span>
-          <button onClick={handleCompleteDraft}>完成</button>
+          <button onClick={handleCompleteDraft}>{t("complete")}</button>
           <button onClick={() => setDraftState({ taskId: currentTaskId, coordinates: [] })}>
-            取消
+            {t("cancel")}
           </button>
         </div>
       )}
@@ -229,7 +249,7 @@ export default function MapView() {
         <Source
           id="reference-label-source"
           type="geojson"
-          data={referenceData.labelCollection}
+          data={translatedLabelCollection}
         >
           <Layer {...REFERENCE_LABEL_LAYER} />
         </Source>
@@ -316,21 +336,25 @@ export default function MapView() {
               {popupInfo.type === "point" ? (
                 <>
                   <p>
-                    <strong>点标注 #{popupInfo.index + 1}</strong>
+                    <strong>{t("pointMarker", { index: popupInfo.index + 1 })}</strong>
                   </p>
-                  <p>经度: {popupInfo.lng.toFixed(6)}</p>
-                  <p>纬度: {popupInfo.lat.toFixed(6)}</p>
+                  <p>{t("longitude")}: {popupInfo.lng.toFixed(6)}</p>
+                  <p>{t("latitude")}: {popupInfo.lat.toFixed(6)}</p>
                 </>
               ) : (
                 <>
                   <p>
-                    <strong>{popupInfo.type === "line" ? "线" : "面"}标注 #{popupInfo.index + 1}</strong>
+                    <strong>
+                      {popupInfo.type === "line"
+                        ? t("lineMarker", { index: popupInfo.index + 1 })
+                        : t("polygonMarker", { index: popupInfo.index + 1 })}
+                    </strong>
                   </p>
-                  <p>顶点数: {popupInfo.vertexCount}</p>
+                  <p>{t("vertexCount")}: {popupInfo.vertexCount}</p>
                 </>
               )}
               <p>
-                时间:{" "}
+                {t("time")}:{" "}
                 {new Date(popupInfo.timestamp).toLocaleString()}
               </p>
               <button
@@ -340,7 +364,7 @@ export default function MapView() {
                   setPopupInfo(null);
                 }}
               >
-                删除
+                {t("delete")}
               </button>
             </div>
           </Popup>

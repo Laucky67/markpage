@@ -1,0 +1,27 @@
+{
+  "appTitle": "GeoLocus Annotation Tool",
+  "exportJson": "Export JSON",
+  "importJson": "Import JSON",
+  "invalidJson": "Invalid JSON file",
+  "drawMode": {
+    "point": "Point",
+    "line": "Line",
+    "polygon": "Polygon"
+  },
+  "markerCount": "Pt {{point}} / Ln {{line}} / Pg {{polygon}} (Total {{total}})",
+  "clearMarkers": "Clear Markers",
+  "confirmClear": "Clear all {{count}} markers for {{taskId}}?",
+  "draftPoints": "Current {{mode}} draft points: {{count}}",
+  "complete": "Finish",
+  "cancel": "Cancel",
+  "lineMinPoints": "Line annotation requires at least 2 points",
+  "polygonMinPoints": "Polygon annotation requires at least 3 points",
+  "pointMarker": "Point #{{index}}",
+  "lineMarker": "Line #{{index}}",
+  "polygonMarker": "Polygon #{{index}}",
+  "longitude": "Lng",
+  "latitude": "Lat",
+  "vertexCount": "Vertices",
+  "time": "Time",
+  "delete": "Delete"
+}

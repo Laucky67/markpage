@@ -1,10 +1,13 @@
+import { useTranslation } from "react-i18next";
 import TASKS from "../data/tasks";
 import { useMarkerStore } from "../store/useMarkerStore.jsx";
 import "./TaskDetail.css";
 
 export default function TaskDetail() {
   const { currentTaskId, markers, drawMode, setDrawMode, clearMarkers } = useMarkerStore();
-  const task = TASKS.find((t) => t.id === currentTaskId);
+  const { t } = useTranslation("ui");
+  const { t: tTasks } = useTranslation("tasks");
+  const task = TASKS.find((tk) => tk.id === currentTaskId);
   if (!task) return null;
 
   const taskMarkers = markers[task.id] || { point: [], line: [], polygon: [] };
@@ -15,7 +18,7 @@ export default function TaskDetail() {
 
   const handleClear = () => {
     if (count === 0) return;
-    if (window.confirm(`确定清除 ${task.id} 的所有 ${count} 个标记？`)) {
+    if (window.confirm(t("confirmClear", { taskId: task.id, count }))) {
       clearMarkers(task.id);
     }
   };
@@ -24,7 +27,7 @@ export default function TaskDetail() {
     <div className="task-detail">
       <div className="task-detail-info">
         <h3>{task.id}</h3>
-        <p>{task.description}</p>
+        <p>{tTasks(task.id, { defaultValue: task.description })}</p>
       </div>
       <div className="task-detail-actions">
         <div className="mode-switch">
@@ -32,26 +35,26 @@ export default function TaskDetail() {
             className={drawMode === "point" ? "active" : ""}
             onClick={() => setDrawMode("point")}
           >
-            点
+            {t("drawMode.point")}
           </button>
           <button
             className={drawMode === "line" ? "active" : ""}
             onClick={() => setDrawMode("line")}
           >
-            线
+            {t("drawMode.line")}
           </button>
           <button
             className={drawMode === "polygon" ? "active" : ""}
             onClick={() => setDrawMode("polygon")}
           >
-            面
+            {t("drawMode.polygon")}
           </button>
         </div>
         <span className="marker-count">
-          点 {pointCount} / 线 {lineCount} / 面 {polygonCount}（总计 {count}）
+          {t("markerCount", { point: pointCount, line: lineCount, polygon: polygonCount, total: count })}
         </span>
         <button className="clear-btn" onClick={handleClear}>
-          清除标记
+          {t("clearMarkers")}
         </button>
       </div>
     </div>

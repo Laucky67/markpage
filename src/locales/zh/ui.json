@@ -1,0 +1,27 @@
+{
+  "appTitle": "GeoLocus 标注工具",
+  "exportJson": "导出 JSON",
+  "importJson": "导入 JSON",
+  "invalidJson": "无效的 JSON 文件",
+  "drawMode": {
+    "point": "点",
+    "line": "线",
+    "polygon": "面"
+  },
+  "markerCount": "点 {{point}} / 线 {{line}} / 面 {{polygon}}（总计 {{total}}）",
+  "clearMarkers": "清除标记",
+  "confirmClear": "确定清除 {{taskId}} 的所有 {{count}} 个标记？",
+  "draftPoints": "当前{{mode}}草稿点数：{{count}}",
+  "complete": "完成",
+  "cancel": "取消",
+  "lineMinPoints": "线标注至少需要 2 个点",
+  "polygonMinPoints": "面标注至少需要 3 个点",
+  "pointMarker": "点标注 #{{index}}",
+  "lineMarker": "线标注 #{{index}}",
+  "polygonMarker": "面标注 #{{index}}",
+  "longitude": "经度",
+  "latitude": "纬度",
+  "vertexCount": "顶点数",
+  "time": "时间",
+  "delete": "删除"
+}
