@@ -1,0 +1,122 @@
+{
+    "type": "FeatureCollection",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 331029057,
+                "osm_type": "way",
+                "osm_id": 447018423,
+                "place_rank": 26,
+                "category": "highway",
+                "type": "residential",
+                "importance": 0.608845949486131,
+                "addresstype": "road",
+                "name": "华尔街",
+                "display_name": "华尔街, Financial District, Lower Manhattan, Manhattan, New York County, 纽约;紐約, 纽约州;紐約州, 10005, 美国;美國"
+            },
+            "bbox": [
+                -74.0094998,
+                40.7051798,
+                -74.0074068,
+                40.706378
+            ],
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.0094998,
+                        40.706378
+                    ],
+                    [
+                        -74.0094493,
+                        40.7063487
+                    ],
+                    [
+                        -74.0087767,
+                        40.7059917
+                    ],
+                    [
+                        -74.0079954,
+                        40.7055752
+                    ],
+                    [
+                        -74.0079409,
+                        40.7055443
+                    ],
+                    [
+                        -74.0078811,
+                        40.7055113
+                    ],
+                    [
+                        -74.0075339,
+                        40.7052925
+                    ],
+                    [
+                        -74.0074944,
+                        40.7052646
+                    ],
+                    [
+                        -74.0074673,
+                        40.7052428
+                    ],
+                    [
+                        -74.0074334,
+                        40.7052087
+                    ],
+                    [
+                        -74.0074068,
+                        40.7051798
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 331127294,
+                "osm_type": "way",
+                "osm_id": 112588882,
+                "place_rank": 26,
+                "category": "highway",
+                "type": "pedestrian",
+                "importance": 0.608845949486131,
+                "addresstype": "road",
+                "name": "华尔街",
+                "display_name": "华尔街, Financial District, Lower Manhattan, Manhattan, New York County, 纽约;紐約, 纽约州;紐約州, 10005, 美国;美國"
+            },
+            "bbox": [
+                -74.0106735,
+                40.7064224,
+                -74.0095707,
+                40.7071202
+            ],
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -74.0106735,
+                        40.7071202
+                    ],
+                    [
+                        -74.0105634,
+                        40.7070505
+                    ],
+                    [
+                        -74.0098809,
+                        40.706619
+                    ],
+                    [
+                        -74.0096815,
+                        40.7064914
+                    ],
+                    [
+                        -74.0095707,
+                        40.7064224
+                    ]
+                ]
+            }
+        }
+    ]
+}

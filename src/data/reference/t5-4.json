@@ -1,0 +1,25 @@
+{
+    "task": "T5-4: 餐厅在新宿购物区里面，从新宿站走过去5分钟，在甲州街道的北侧，靠近咖啡馆（咖啡馆在邮局东边100米）",
+    "landmarks": [
+        {
+            "name": "新宿购物区",
+            "coordinates": []
+        },
+        {
+            "name": "新宿站",
+            "coordinates": []
+        },
+        {
+            "name": "甲州街道",
+            "coordinates": []
+        },
+        {
+            "name": "咖啡馆",
+            "coordinates": []
+        },
+        {
+            "name": "邮局",
+            "coordinates": []
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "type": "FeatureCollection",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 244565647,
+                "osm_type": "relation",
+                "osm_id": 4247312,
+                "place_rank": 30,
+                "category": "man_made",
+                "type": "tower",
+                "importance": 0.540354015586502,
+                "addresstype": "man_made",
+                "name": "東京鐵塔",
+                "display_name": "東京鐵塔, 東京タワー通り, 芝公園四丁目, 芝公園, 港區, 东京都/東京都, 106-0041, 日本"
+            },
+            "bbox": [
+                139.7449463,
+                35.6581782,
+                139.7459337,
+                35.6589495
+            ],
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            139.7449463,
+                            35.6586099
+                        ],
+                        [
+                            139.7454507,
+                            35.6583305
+                        ],
+                        [
+                            139.7454304,
+                            35.6583048
+                        ],
+                        [
+                            139.7454432,
+                            35.6582659
+                        ],
+                        [
+                            139.7456106,
+                            35.6581782
+                        ],
+                        [
+                            139.7459337,
+                            35.6585677
+                        ],
+                        [
+                            139.7452329,
+                            35.6589495
+                        ],
+                        [
+                            139.7449463,
+                            35.6586099
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

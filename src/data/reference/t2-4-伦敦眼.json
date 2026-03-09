@@ -1,0 +1,54 @@
+{
+    "type": "FeatureCollection",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 418035764,
+                "osm_type": "way",
+                "osm_id": 204068874,
+                "place_rank": 30,
+                "category": "building",
+                "type": "yes",
+                "importance": 0.000093079270618707,
+                "addresstype": "building",
+                "name": "伦敦眼",
+                "display_name": "伦敦眼, Westminster Bridge Road, South Bank, Lambeth, London Borough of Lambeth, 大倫敦;大伦敦, 英格兰;英格蘭, SE1 7PB, 英国;英國"
+            },
+            "bbox": [
+                -0.1198608,
+                51.5027354,
+                -0.1194922,
+                51.5039478
+            ],
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.1198608,
+                            51.5027451
+                        ],
+                        [
+                            -0.1197395,
+                            51.5027354
+                        ],
+                        [
+                            -0.1194922,
+                            51.5039381
+                        ],
+                        [
+                            -0.1196135,
+                            51.5039478
+                        ],
+                        [
+                            -0.1198608,
+                            51.5027451
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

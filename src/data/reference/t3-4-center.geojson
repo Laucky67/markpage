@@ -1,0 +1,34 @@
+{
+    "type": "FeatureCollection",
+    "name": "t3-4-center",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 429727183,
+                "osm_type": "way",
+                "osm_id": 375257537,
+                "place_rank": 30,
+                "category": "building",
+                "type": "yes",
+                "importance": 0.58064021518740305,
+                "addresstype": "building",
+                "name": "泰姬陵",
+                "display_name": "泰姬陵, Taj East Gate Road, Taj Ganj, 阿格拉, Agra, 北方邦, 282004, 印度"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8687606.709262246266007,
+                    3145353.714522947091609
+                ]
+            }
+        }
+    ]
+}

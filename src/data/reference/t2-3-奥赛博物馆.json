@@ -1,0 +1,54 @@
+{
+    "type": "FeatureCollection",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 89078446,
+                "osm_type": "way",
+                "osm_id": 63178753,
+                "place_rank": 30,
+                "category": "tourism",
+                "type": "museum",
+                "importance": 0.638863143493851,
+                "addresstype": "tourism",
+                "name": "奧賽博物館",
+                "display_name": "奧賽博物館, 1, Rue de la Légion d'Honneur, 圣托马斯·达奎因街区, 第七区, 巴黎, 法兰西岛大区 / 法蘭西島大區, 法國本土/法国本土, 75007, 法国;法國"
+            },
+            "bbox": [
+                2.325179,
+                48.8592911,
+                2.3278729,
+                48.8605465
+            ],
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            2.325179,
+                            48.8600784
+                        ],
+                        [
+                            2.3274502,
+                            48.8592911
+                        ],
+                        [
+                            2.3278729,
+                            48.8598942
+                        ],
+                        [
+                            2.3257271,
+                            48.8605465
+                        ],
+                        [
+                            2.325179,
+                            48.8600784
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}

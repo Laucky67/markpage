@@ -1,0 +1,54 @@
+{
+    "type": "FeatureCollection",
+    "name": "t4-4",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "place_id": 71609379,
+                "osm_type": "relation",
+                "osm_id": 7932554,
+                "place_rank": 26,
+                "category": "highway",
+                "type": "pedestrian",
+                "importance": 0.24404996673231699,
+                "addresstype": "road",
+                "name": "圣马可广场",
+                "display_name": "圣马可广场, San Marco, Venezia-Murano-Burano, Lido, 威尼斯, Venezia, Veneto, 30124, 意大利;意大利"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            1373588.050669108750299,
+                            5690105.266958226449788
+                        ],
+                        [
+                            1373635.784466760931537,
+                            5689983.102461474016309
+                        ],
+                        [
+                            1373690.063850471749902,
+                            5690004.248332843184471
+                        ],
+                        [
+                            1373659.562309994362295,
+                            5690145.290827497839928
+                        ],
+                        [
+                            1373588.050669108750299,
+                            5690105.266958226449788
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
