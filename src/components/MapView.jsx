@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
-import Map, { Marker, Popup, Source, Layer } from "react-map-gl/mapbox";
+import Map, { Marker, Popup, Source, Layer, ScaleControl } from "react-map-gl/mapbox";
 import { useTranslation } from "react-i18next";
 import "mapbox-gl/dist/mapbox-gl.css";
 import TASKS from "../data/tasks";
@@ -52,7 +52,7 @@ const REFERENCE_LABEL_LAYER = {
   type: "symbol",
   layout: {
     "text-field": ["get", "name"],
-    "text-size": 13,
+    "text-size": 30,
     "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
     "text-offset": [0, 1],
     "text-anchor": "top",
@@ -235,6 +235,7 @@ export default function MapView() {
         mapboxAccessToken={MAPBOX_TOKEN}
         style={{ width: "100%", height: "100%" }}
       >
+        <ScaleControl position="bottom-left" />
         <Source
           id="reference-source"
           type="geojson"
