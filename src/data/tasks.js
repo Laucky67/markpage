@@ -2,7 +2,7 @@ const TASKS = [
   { id: "t1-1", description: "宿舍区在南京师范大学内部", center: [118.897252, 32.1025072], zoom: 15 },
   { id: "t1-2", description: "教堂在华尔街与百老汇交叉口", center: [-74.0112, 40.7074], zoom: 16 },
   { id: "t2-1", description: "酒店在圣家族大教堂东南侧150米", center: [2.1744, 41.4036], zoom: 15 },
-  { id: "t2-2", description: "咖啡馆在卢浮宫东边2000米，巴黎圣母院北边1500米", center: [2.3364, 48.8606], zoom: 14 },
+  { id: "t2-2", description: "咖啡馆在卢浮宫东边500米，巴黎圣母院北边1000米", center: [2.3364, 48.8606], zoom: 14 },
   { id: "t2-3", description: "餐厅沿着塞纳河，在奥赛博物馆西北边", center: [2.32, 48.8600], zoom: 14 },
   { id: "t2-4", description: "景点在金门大桥的155度方向，距离1公里", center: [-122.4783, 37.8199], zoom: 14 },
   { id: "t2-5", description: "酒店在大本钟北边，伦敦眼西边，威斯敏斯特教堂东北边", center: [-0.1246, 51.5007], zoom: 15 },
