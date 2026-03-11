@@ -23,5 +23,12 @@
   "latitude": "纬度",
   "vertexCount": "顶点数",
   "time": "时间",
-  "delete": "删除"
+  "delete": "删除",
+  "measure": {
+    "toggle": "测量",
+    "totalDistance": "总距离",
+    "segmentCount": "段数",
+    "clear": "清除测量",
+    "clickToStart": "点击地图开始测量"
+  }
 }

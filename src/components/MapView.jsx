@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import TASKS from "../data/tasks";
 import REFERENCE_BY_TASK_ID, { EMPTY_REFERENCE } from "../data/reference";
 import { useMarkerStore } from "../store/useMarkerStore.jsx";
+import MeasureTool from "./MeasureTool";
 import "./MapView.css";
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -74,6 +75,7 @@ export default function MapView() {
   const mapRef = useRef(null);
   const [popupInfo, setPopupInfo] = useState(null);
   const [draftState, setDraftState] = useState({ taskId: null, coordinates: [] });
+  const [measuring, setMeasuring] = useState(false);
 
   const [viewState, setViewState] = useState({
     longitude: task?.center[0] ?? 0,
@@ -94,6 +96,7 @@ export default function MapView() {
 
   const handleClick = useCallback(
     (e) => {
+      if (measuring) return;
       if (!currentTaskId) return;
       const hitFeature = e.features?.find((f) => {
         const shapeType = f.properties?.shapeType;
@@ -129,7 +132,7 @@ export default function MapView() {
         coordinates: prev.taskId === currentTaskId ? [...prev.coordinates, [lng, lat]] : [[lng, lat]],
       }));
     },
-    [currentTaskId, drawMode, addPoint, markers]
+    [currentTaskId, drawMode, addPoint, markers, measuring]
   );
 
   const taskMarkers = markers[currentTaskId] || { point: [], line: [], polygon: [] };
@@ -236,6 +239,7 @@ export default function MapView() {
         style={{ width: "100%", height: "100%" }}
       >
         <ScaleControl position="bottom-left" />
+        <MeasureTool onMeasuringChange={setMeasuring} />
         <Source
           id="reference-source"
           type="geojson"

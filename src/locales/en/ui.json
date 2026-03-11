@@ -23,5 +23,12 @@
   "latitude": "Lat",
   "vertexCount": "Vertices",
   "time": "Time",
-  "delete": "Delete"
+  "delete": "Delete",
+  "measure": {
+    "toggle": "Measure",
+    "totalDistance": "Total Distance",
+    "segmentCount": "Segments",
+    "clear": "Clear",
+    "clickToStart": "Click map to start measuring"
+  }
 }
